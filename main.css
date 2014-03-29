@@ -20,7 +20,7 @@ body {
 }
 
 .list, .input, .footer {
-	width: 600px;
+	max-width: 600px;
 }
 
 .list {
@@ -31,14 +31,16 @@ body {
 	background-color: rgba(254, 255, 246, 0.5);
 	margin-left: auto;
 	margin-right: auto;
-	font-family: 'Cardo', serif;
+	/*font-family: 'Cardo', serif;*/
+	font-family: 'Rokkitt', serif;
 	color: white;
-	font-style: italic;
 	line-height: 40px;
 	position: relative;
 	padding-top: 20px;
 	padding-left: 0;
 	text-align: center;
+	padding-left: 4px;
+	padding-right: 4px;
 }
 
 .header {
@@ -51,15 +53,29 @@ body {
 
 .item {
 	height: 150px;
-	width: 150px;
-	background-color: rgba(38, 220, 180, 0.8);
-	margin-left: 0 auto;
-	margin-right: 0 auto;
-	margin-top: 10px;
+	min-width: 150px;
+	/*margin-left: 0 auto;
+	margin-right: 0 auto;*/
 	display: inline-block;
-	padding-top: 55px;
 	position: relative;
-	font-size: 25px;
+	margin-top: 8px;
+	padding-top: 60px;
+	font-size: 2em;
+	/*float: left;
+	margin-right: 10px;
+	margin-left:20px;*/
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
+.item span {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.item {
+	background-color: rgba(132, 175, 182, 0.8);
+	text-decoration: none;
 }
 
 .remove {
@@ -67,7 +83,17 @@ body {
 	bottom: 0;
 	height: 35px;
 	width: 100%;
+	font-size: 18px;
 	display: none;
+}
+.delete {
+	text-align: left;
+	padding-left: 15px;
+}
+
+.keep {
+	text-align: right;
+	padding-right: 15px;
 }
 
 .keep, .delete {
@@ -87,49 +113,74 @@ body {
 	color: red;
 }*/
 
-.complete {
+.complete, .complete-show {
 	background-color: rgba(86, 86, 86, 0.5);
-	text-decoration: line-through;
 }
 
-.complete_add {
-	background-color: rgba(86, 86, 86, 0.5);
+.complete {
 	text-decoration: line-through;
 }
 
 .destroy {
 	background-color: rgba(241, 0, 20, 0.7);
 	text-decoration: line-through;
-	color: rgba(86, 86, 86, 0.5);;
 }
 
-.destroy_add {
-	background-color: rgba(241, 0, 20, 0.7);
-	text-decoration: line-through;
-	color: rgba(86, 86, 86, 0.5);;
+.show {
+	background-color: rgba(170, 213, 220, 0.8);
+	text-decoration: none;
 }
+
 
 .input {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
 	background-color: rgba(254, 255, 246, 0.5);
-	height: 60px;
+	height: 90px;
 	position: relative;
 	text-align: center;
 }
 
+
+.submit, .reset {
+	height: 30px;
+	width: 580px;
+	background-color: rgba(132, 175, 182, 0.8);
+	float: left;
+	font-family: 'Rokkitt', serif;
+	color: white;
+	padding-top: 3px;
+	border: none;
+	font-size: 1.5em;
+}
+
+.reset:hover {
+	background-color: rgba(241, 0, 20, 0.7);
+}
+
+.reset:focus {
+	outline: none;
+	background-color: rgba(86, 86, 86, 0.5);
+}
+
+input , .submit, .reset {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
 input {
-	margin-top: 15px;
 	border: none;
 	height: 30px;
-	width: 500px;
+	width: 580px;
+	float: left;
+	border: 1px solid rgba(170, 213, 220, 1);
 
 }
 
 input:focus {
 	outline: none;
-	border: 1px solid rgba(38, 220, 180, 1.0000);
+	border: 2px solid rgba(170, 213, 220, 1);
 }
 
 .footer {

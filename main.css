@@ -1,0 +1,172 @@
+* {
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+body {
+	background-image: url('images/squairy_light.png');
+	margin: 0;
+	/*background-color: rgba(242, 242, 242, 1.0000)*/
+}
+
+.container {
+	height: 1200px;
+	width: 100%;
+	/*background-color: rgba(0, 0, 0, 0.5);*/
+	padding-top: 200px;
+}
+
+.list {
+	overflow-y: auto;
+	max-height: 800px;
+	min-height: 250px;
+	width: 800px;
+	background-color: rgba(254, 255, 246, 0.5);
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Cardo', serif;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	font-style: italic;
+	line-height: 40px;
+	padding-bottom: 40px;
+	position: relative;
+	padding-top: 40px;
+	padding-left: 0;
+}
+
+.header {
+	padding-top: 20px;
+	height: 100px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.item {
+	height: 200px;
+	width: 200px;
+	background-color: rgba(38, 220, 180, 0.8);
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+	margin-top: 10px;
+	display: inline-block;
+	padding-top: 80px;
+	position: relative;
+}
+
+.remove {
+	position: absolute;
+	bottom: 0;
+	height: 35px;
+	width: 100%;
+	display: none;
+}
+
+.keep, .delete {
+	width: 50%;
+	height: 35px;
+	background-color: red;
+	float: left;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.keep {
+	color: green;
+}
+
+.delete {
+	color: red;
+}
+
+.complete {
+	background-color: rgba(86, 86, 86, 0.5);
+	text-decoration: line-through;
+}
+
+.complete_add {
+	background-color: rgba(86, 86, 86, 0.5);
+	text-decoration: line-through;
+}
+
+.destroy {
+	background-color: rgba(241, 0, 20, 0.7);
+	text-decoration: line-through;
+	color: rgba(86, 86, 86, 0.5);;
+}
+
+.destroy_add {
+	background-color: rgba(241, 0, 20, 0.7);
+	text-decoration: line-through;
+	color: rgba(86, 86, 86, 0.5);;
+}
+
+/*.keep, .delete {
+	position: absolute;
+	top: 0;
+	height: 200px;
+	width: 100px;
+	padding-top: 75px;
+	background-color: rgba(20, 20, 20, 0.7);
+	display: none;
+}
+
+.keep {
+	color: green;
+	border-right: 1px solid rgba(20, 20, 20, 0.2);
+	left: 0;
+}
+
+.keep a , .delete a {
+	text-decoration: none;
+}
+
+.keep a {
+	color: green;
+}
+
+.delete a {
+	color: red;
+}
+
+.delete {
+	color: red;
+	right: 0;
+}*/
+
+.input {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	background-color: rgba(254, 255, 246, 0.5);
+	width:	800px;
+	height: 60px;
+	position: relative;
+	text-align: center;
+}
+
+input {
+	margin-top: 15px;
+	border: none;
+	height: 30px;
+	width: 500px;
+
+}
+
+input:focus {
+	outline: none;
+	border: 1px solid rgba(38, 220, 180, 1.0000);
+}
+
+.footer {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(254, 255, 246, 0.5);
+	width:	800px;
+	height: 50px;
+	position: relative;
+}

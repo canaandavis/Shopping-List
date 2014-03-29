@@ -13,30 +13,32 @@ body {
 }
 
 .container {
-	height: 1200px;
+	height: 100%;
 	width: 100%;
 	/*background-color: rgba(0, 0, 0, 0.5);*/
-	padding-top: 200px;
+	padding-top: 100px;
+}
+
+.list, .input, .footer {
+	width: 600px;
 }
 
 .list {
 	overflow-y: auto;
-	max-height: 800px;
-	min-height: 250px;
-	width: 800px;
+	height: 100%;
+	min-height: 100px;
+	max-height: 600px;
 	background-color: rgba(254, 255, 246, 0.5);
 	margin-left: auto;
 	margin-right: auto;
 	font-family: 'Cardo', serif;
-	text-align: center;
-	font-size: 30px;
 	color: white;
 	font-style: italic;
 	line-height: 40px;
-	padding-bottom: 40px;
 	position: relative;
-	padding-top: 40px;
+	padding-top: 20px;
 	padding-left: 0;
+	text-align: center;
 }
 
 .header {
@@ -48,15 +50,16 @@ body {
 }
 
 .item {
-	height: 200px;
-	width: 200px;
+	height: 150px;
+	width: 150px;
 	background-color: rgba(38, 220, 180, 0.8);
 	margin-left: 0 auto;
 	margin-right: 0 auto;
 	margin-top: 10px;
 	display: inline-block;
-	padding-top: 80px;
+	padding-top: 55px;
 	position: relative;
+	font-size: 25px;
 }
 
 .remove {
@@ -72,16 +75,17 @@ body {
 	height: 35px;
 	background-color: red;
 	float: left;
+	color: white;
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.keep {
+/*.keep {
 	color: green;
 }
 
 .delete {
 	color: red;
-}
+}*/
 
 .complete {
 	background-color: rgba(86, 86, 86, 0.5);
@@ -105,45 +109,11 @@ body {
 	color: rgba(86, 86, 86, 0.5);;
 }
 
-/*.keep, .delete {
-	position: absolute;
-	top: 0;
-	height: 200px;
-	width: 100px;
-	padding-top: 75px;
-	background-color: rgba(20, 20, 20, 0.7);
-	display: none;
-}
-
-.keep {
-	color: green;
-	border-right: 1px solid rgba(20, 20, 20, 0.2);
-	left: 0;
-}
-
-.keep a , .delete a {
-	text-decoration: none;
-}
-
-.keep a {
-	color: green;
-}
-
-.delete a {
-	color: red;
-}
-
-.delete {
-	color: red;
-	right: 0;
-}*/
-
 .input {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
 	background-color: rgba(254, 255, 246, 0.5);
-	width:	800px;
 	height: 60px;
 	position: relative;
 	text-align: center;
@@ -166,7 +136,6 @@ input:focus {
 	margin-left: auto;
 	margin-right: auto;
 	background-color: rgba(254, 255, 246, 0.5);
-	width:	800px;
-	height: 50px;
+	height: 30px;
 	position: relative;
 }

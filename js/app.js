@@ -4,7 +4,11 @@ $(document).ready(function(){
 	$('.item').mouseover(function(){
 		if ($(this).hasClass('complete_add')) {
 			$(this).addClass('destroy');
-			$(this).find('.remove').show();
+			$(this).find('.remove').slideDown();
+			$(this).find('.remove').slideDown();
+			$(this).find('.keep').mousedown(function(){
+				$(this).closest('.item').remove();
+			});
 		}
 		else {
 			$(this).addClass('complete');
@@ -12,27 +16,29 @@ $(document).ready(function(){
 	})
 	.mouseleave(function(){
 		$(this).removeClass('complete destroy');
-	})
-	.dblclick(function(){
-		if ($(this).hasClass('destroy_add')) {
-			$(this).closest('.item').remove();
-		}
+		$(this).find('.remove').slideUp();
 	})
 	.mousedown(function(){
 		if ($(this).hasClass('complete_add')) {
-			$(this).addClass('destroy_add');
 			$(this).removeClass('complete_add');
 			$(this).addClass('destroy');
 		}
 		else {
 			$(this).addClass('complete_add');
+			$(this).addClass('destroy');
+			$(this).find('.remove').slideDown();
+			$(this).find('.remove').slideDown();
+			$(this).find('.keep').mousedown(function(){
+				$(this).closest('.item').remove();
+			})
 		}
 	});
 
 });
 
-// function clicks() {
-// 	$(this).on('click', function(e) {
-		
-// 	}
-// }
+function removeItem() {
+	$(this).find('.remove').slideDown();
+		$(this).find('.keep').mousedown(function(){
+			$(this).closest('.item').remove();
+		})
+}

@@ -6,7 +6,7 @@ $(document).ready(function(){
 			$(this).addClass('destroy');
 			$(this).find('.remove').slideDown();
 			$(this).find('.remove').slideDown();
-			$(this).find('.keep').mousedown(function(){
+			$(this).find('.delete').mousedown(function(){
 				$(this).closest('.item').remove();
 			});
 		}
@@ -20,17 +20,13 @@ $(document).ready(function(){
 	})
 	.mousedown(function(){
 		if ($(this).hasClass('complete_add')) {
-			$(this).removeClass('complete_add');
-			$(this).addClass('destroy');
+			// $(this).removeClass('complete_add');
+			// $(this).addClass('destroy');
 		}
 		else {
 			$(this).addClass('complete_add');
 			$(this).addClass('destroy');
 			$(this).find('.remove').slideDown();
-			$(this).find('.remove').slideDown();
-			$(this).find('.keep').mousedown(function(){
-				$(this).closest('.item').remove();
-			})
 		}
 	});
 
@@ -38,7 +34,7 @@ $(document).ready(function(){
 
 function removeItem() {
 	$(this).find('.remove').slideDown();
-		$(this).find('.keep').mousedown(function(){
+		$(this).find('.delete').mousedown(function(){
 			$(this).closest('.item').remove();
 		})
 }

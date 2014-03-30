@@ -33,29 +33,39 @@ function removeAll(event) {
 
 function updateStyle() {
 	$('.item').mouseenter(function(){
-		if ($(this).hasClass('complete') === false && $(this).hasClass('show') === false) {
+		mouseLeave = false;
+		if ($(this).hasClass('complete') === false && mouseLeave === false ) {
 			$(this).closest('.item').addClass('complete-show');
 		}
 
-		else {
+		else if (mouseLeave === false) {
 			revealTools($(this));
 		}
 
 	});
 
 	$('.item').mouseleave(function(){
+		mouseleave = true;
 		$(this).removeClass('show complete-show');
 		hideTools($(this));
 	});
 
 	$('.item').mousedown(function(){
-		if ($(this).hasClass('show') === false) {
+		if ($(this).hasClass('show') === false && mouseLeave === false) {
 			$(this).addClass('complete')
 			.removeClass('complete-show');
 			revealTools($(this));
 		}
+		else {
+			$(this).mousedown(function(){
+				mouseLeave = false;
+			});
+
+		}
 	});
 }
+
+var mouseLeave = true;
 
 
 // Hide Edit Tools
@@ -87,7 +97,8 @@ function revealTools(event) {
 		}
 	})
 	.mousedown(function(){
-		$(this).closest('.item').removeClass('complete');
+		$(this).closest('.item').removeClass('complete show');
 		$(this).closest('.item').find('.remove').slideUp();
+		mouseLeave = true;
 	});
 }

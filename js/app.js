@@ -57,6 +57,7 @@ function updateStyle() {
 	});
 }
 
+
 // Hide Edit Tools
 
 function hideTools(event) {

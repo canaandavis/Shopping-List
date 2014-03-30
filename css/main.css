@@ -1,0 +1,182 @@
+/* Document Setup */
+
+* {
+	box-sizing: border-box;
+	font-family: 'Rokkitt', serif;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+body {
+	background-image: url('../images/squairy_light.png');
+	margin: 0;
+}
+
+/* General Content Settings */
+
+.container {
+	height: 100%;
+	width: 100%;
+	padding-top: 100px;
+}
+
+.list, .input, .footer {
+	max-width: 600px;
+}
+
+.header {
+	padding-top: 20px;
+	height: 100px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.footer {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(254, 255, 246, 0.5);
+	height: 30px;
+	position: relative;
+}
+
+/* Input Field and Reset Button */
+
+.input {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	background-color: rgba(254, 255, 246, 0.5);
+	height: 90px;
+	position: relative;
+	text-align: center;
+}
+
+.reset, input {
+	height: 30px;
+	width: 580px;
+	margin-top: 10px;
+	margin-left: 10px;
+	float: left;
+}
+
+
+.reset {
+	background-color: rgba(132, 175, 182, 0.8);
+	color: white;
+	padding-top: 3px;
+	font-size: 1.5em;
+	border: none;
+}
+
+.reset:hover {
+	background-color: rgba(241, 0, 20, 0.7);
+}
+
+.reset:focus {
+	outline: none;
+	background-color: rgba(86, 86, 86, 0.5);
+}
+
+input {
+	font-size: 15px;
+	text-align: center;
+	border: 1px solid rgba(170, 213, 220, 1);
+
+}
+
+input:focus {
+	outline: none;
+	border: 2px solid rgba(170, 213, 220, 1);
+}
+
+input placeholder {
+	padding-left: 500px;
+}
+
+/* List and List Items Standard View */
+
+.list {
+	overflow-y: auto;
+	height: 100%;
+	min-height: 100px;
+	max-height: 600px;
+	background-color: rgba(254, 255, 246, 0.5);
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	line-height: 40px;
+	position: relative;
+	padding-top: 20px;
+	text-align: center;
+	padding-left: 26px;
+	padding-right: 26px;
+}
+
+.item {
+	height: 150px;
+	min-width: 150px;
+	display: inline-block;
+	position: relative;
+	margin-top: 8px;
+	padding-top: 60px;
+	font-size: 2em;
+	margin-right: 4px;
+	margin-left: 4px;
+	background-color: rgba(132, 175, 182, 0.8);
+}
+
+.item span {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+/* Item Various States */
+
+.complete, .complete-show , .destroy {
+	text-decoration: line-through;
+}
+
+.complete, .complete-show {
+	background-color: rgba(86, 86, 86, 0.5);
+}
+
+.destroy {
+	background-color: rgba(241, 0, 20, 0.7);
+}
+
+.show {
+	background-color: rgba(170, 213, 220, 0.8);
+	text-decoration: none;
+}
+
+/* Edit Tools */
+
+.remove {
+	position: absolute;
+	bottom: 0;
+	height: 35px;
+	width: 100%;
+	font-size: 18px;
+	display: none;
+}
+.delete {
+	text-align: left;
+	padding-left: 15px;
+}
+
+.keep {
+	text-align: right;
+	padding-right: 15px;
+}
+
+.keep, .delete {
+	width: 50%;
+	height: 35px;
+	background-color: red;
+	float: left;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}

@@ -11,6 +11,9 @@ $(document).ready(function(){
 	});
 });
 
+// Adds a new item to the list
+// calls updateStyle(); to allow functanality on new items
+
 function addItem() {
 	var value = $('#input-field').val();
 	var editTools = '<div class="remove"><div class="delete"><i class="fa fa-times-circle" id="remove-circle"></i></div><div class="keep"><i class="fa fa-undo" id="undo-circle"></i></div></div>';
@@ -18,44 +21,50 @@ function addItem() {
 	$('.list').prepend(listItem);
 	$('#input-field').val('');
 	updateStyle();
-
 }
+
+// Reset button function
 
 function removeAll(event) {
 	event.find('.list').empty();
 }
 
+// Add and remove styles from list items
+
 function updateStyle() {
 	$('.item').mouseenter(function(){
-		if ($(this).hasClass('complete') === false) {
+		if ($(this).hasClass('complete') === false && $(this).hasClass('show') === false) {
 			$(this).closest('.item').addClass('complete-show');
 		}
 
 		else {
-			revealTools($(this))
+			revealTools($(this));
 		}
 
 	});
 
 	$('.item').mouseleave(function(){
+		$(this).removeClass('show complete-show');
 		hideTools($(this));
 	});
 
 	$('.item').mousedown(function(){
-		if ($(this).hasClass('show') == false) {
-			$(this).addClass('complete');
-			revealTools($(this));
-		}
-		else {
+		if ($(this).hasClass('show') === false) {
+			$(this).addClass('complete')
+			.removeClass('complete-show');
 			revealTools($(this));
 		}
 	});
 }
 
+// Hide Edit Tools
+
 function hideTools(event) {
-	event.removeClass('complete-show')
-		.find('.remove').slideUp();
+	event.find('.remove').slideUp();
 }
+
+// function to reveal edit tools of list item
+// allows function of edit tools as well
 
 function revealTools(event) {
 	event.find('.remove').slideDown();
@@ -63,7 +72,7 @@ function revealTools(event) {
 		$(this).closest('.item').addClass('destroy');
 	})
 	.mouseleave(function(){
-		$(this).closest('.item').removeClass('destroy')
+		$(this).closest('.item').removeClass('destroy');
 	})
 	.mousedown(function(){
 		$(this).closest('.item').remove();
@@ -72,42 +81,12 @@ function revealTools(event) {
 		$(this).closest('.item').addClass('show');
 	})
 	.mouseleave(function(){
-		$(this).closest('.item').removeClass('show');
+	if ($(this).closest('.item').hasClass('complete')) {
+			$(this).closest('.item').removeClass('show');
+		}
 	})
 	.mousedown(function(){
 		$(this).closest('.item').removeClass('complete');
+		$(this).closest('.item').find('.remove').slideUp();
 	});
 }
-
-// function updateStyle() {
-// 	$('.item').mouseover(function(){
-// 		if ($(this).hasClass('complete_add')) {
-// 			$(this).addClass('destroy');
-// 			$(this).find('.remove').slideDown();
-// 			$(this).find('.delete').mousedown(function(){
-// 				$(this).closest('.item').remove();
-// 			})
-// 			$(this).find('.keep').mousedown(function(){
-// 				$(this).closest('.item').removeClass('destroy');
-// 			})
-// 		}
-// 		else {
-// 			$(this).addClass('complete');
-// 		}
-// 	})
-// 	.mouseleave(function(){
-// 		$(this).removeClass('complete destroy');
-// 		$(this).find('.remove').slideUp();
-// 	})
-// 	.mousedown(function(){
-// 		if ($(this).hasClass('complete_add')) {
-// 			// $(this).removeClass('complete_add');
-// 			// $(this).addClass('destroy');
-// 		}
-// 		else {
-// 			$(this).addClass('complete_add');
-// 			$(this).addClass('destroy');
-// 			$(this).find('.remove').slideDown();
-// 		}
-// 	});
-// }
